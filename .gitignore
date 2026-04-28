@@ -1,0 +1,37 @@
+# 子项目 - 各自有独立 Git 仓库
+grasping-agent/
+Project1/
+Project2/
+
+# WorkBuddy 配置和内存（不上传）
+.workbuddy/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+*.log
