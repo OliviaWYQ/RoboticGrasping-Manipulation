@@ -1,0 +1,9 @@
+[submodule "grasping-agent"]
+	path = grasping-agent
+	url = git@github.com:OliviaWYQ/grasping-agent.git
+[submodule "Project1"]
+	path = Project1
+	url = git@github.com:OliviaWYQ/Project1.git
+[submodule "Project2"]
+	path = Project2
+	url = git@github.com:OliviaWYQ/Project2.git
