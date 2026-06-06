@@ -12,6 +12,7 @@
 | [Project3](./Project3/) | PoseCNN 6D 姿态估计与抓取 | MuJoCo, PoseCNN, RRT |
 | [Project4](./Project4/) | GR-ConvNet 抓取点检测与执行 | MuJoCo, GR-ConvNet, RealSense |
 | [Project5](./Project5/) | Diffusion Policy 模仿学习抓取 | MuJoCo, Robopal, Robomimic, Diffusion Policy |
+| [Project6](./Project6/) | PPO 强化学习训练 PiPER 机械臂抓取 | MuJoCo, Stable-Baselines3, PPO |
 
 ## 子项目详情
 
@@ -98,7 +99,18 @@
 
 ---
 
-## 仓库结构
+### [Project6](./Project6/) · PPO 强化学习
+
+基于 PPO（Proximal Policy Optimization）的机械臂抓取强化学习训练，支持 IK 控制（关节空间）与直接抓取（末端执行器空间）两种模式。
+
+- **IK模式**：机械臂通过逆运动学求解关节角到达目标位姿
+- **Grasp模式**：直接预测末端执行器抓取姿态
+- **环境**：MuJoCo + Stable-Baselines3 PPO
+- **运行示例**：
+  ```bash
+  python rl_policy/rl_piper_ik_train.py    # IK模式训练
+  python rl_policy/rl_piper_grasp_train.py  # 抓取模式训练
+  ```
 
 每个子项目拥有独立的 Git 仓库，通过 Git 子模块（submodule）集成到本仓库：
 
@@ -109,7 +121,8 @@ RoboticGrasping-Manipulation/
 ├── Project2/        →  git@github.com:OliviaWYQ/Project2.git
 ├── Project3/        →  git@github.com:OliviaWYQ/Project3.git
 ├── Project4/        →  git@github.com:OliviaWYQ/Project4.git
-└── Project5/        →  git@github.com:OliviaWYQ/Project5.git
+├── Project5/        →  git@github.com:OliviaWYQ/Project5.git
+└── Project6/        →  https://github.com/OliviaWYQ/Project6.git
 ```
 
 克隆时需初始化子模块：
