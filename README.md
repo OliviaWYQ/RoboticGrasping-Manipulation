@@ -13,6 +13,7 @@
 | [Project4](./Project4/) | GR-ConvNet 抓取点检测与执行 | MuJoCo, GR-ConvNet, RealSense |
 | [Project5](./Project5/) | Diffusion Policy 模仿学习抓取 | MuJoCo, Robopal, Robomimic, Diffusion Policy |
 | [Project6](./Project6/) | PPO 强化学习训练 PiPER 机械臂抓取 | MuJoCo, Stable-Baselines3, PPO |
+| [Project7](./Project7/) | GR00T N1 VLA 模型微调与 LIBERO 仿真验证 | GR00T N1, LIBERO, Docker, LeRobot |
 
 ## 子项目详情
 
@@ -112,6 +113,26 @@
   python rl_policy/rl_piper_grasp_train.py  # 抓取模式训练
   ```
 
+---
+
+### [Project7](./Project7/) · GR00T N1 微调与 LIBERO 仿真验证
+
+基于 NVIDIA GR00T N1 视觉-语言-动作（VLA）基础模型，在 LIBERO 数据集上进行微调，并通过 LIBERO 仿真环境验证抓取性能。采用客户端-服务端架构：服务端运行 GR00T N1 模型推理，客户端（LIBERO 仿真）采集状态与视觉信息。
+
+- **核心成果**：微调前成功率 0% → 微调后成功率 96.2%（500 次测试）
+- **数据集**：[libero_object_no_noops_lerobot](https://hf-mirror.com/datasets/IPEC-COMMUNITY/libero_object_no_noops_lerobot)（LeRobot 格式）
+- **架构**：Docker 服务端（GR00T N1 推理）+ Conda 客户端（LIBERO 仿真）
+- **关键文件**：
+  - `gr00t_finetune_libero.py` — 微调训练脚本
+  - `gr00t_primitive_libero.py` — 原始模型推理脚本
+  - `server/` — 服务端推理代码（openpi-client）
+  - `sim/libero/` — LIBERO 仿真环境与数据转换
+  - `modality.json` — GR00T N1 数据模态配置
+- **硬件要求**：建议 A100 显卡，显存 ≥ 40GB
+- **参考模型**：[NVIDIA/Isaac-GR00T](https://github.com/NVIDIA/Isaac-GR00T)
+
+---
+
 每个子项目拥有独立的 Git 仓库，通过 Git 子模块（submodule）集成到本仓库：
 
 ```
@@ -122,7 +143,8 @@ RoboticGrasping-Manipulation/
 ├── Project3/        →  git@github.com:OliviaWYQ/Project3.git
 ├── Project4/        →  git@github.com:OliviaWYQ/Project4.git
 ├── Project5/        →  git@github.com:OliviaWYQ/Project5.git
-└── Project6/        →  https://github.com/OliviaWYQ/Project6.git
+├── Project6/        →  https://github.com/OliviaWYQ/Project6.git
+└── Project7/        →  git@github.com:OliviaWYQ/Project7.git
 ```
 
 克隆时需初始化子模块：
