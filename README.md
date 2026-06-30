@@ -6,7 +6,6 @@
 
 | 子项目 | 简介 | 技术栈 |
 |--------|------|--------|
-| [grasping-agent](https://github.com/OliviaWYQ/grasping-agent) | 反思型机械臂抓取智能体 | MuJoCo, YOLOv8, RRT-Connect, DeepSeek API |
 | [Project1](https://github.com/OliviaWYQ/Project1) | ACT 模仿学习训练 PiPER 机械臂 | MuJoCo, PyTorch, ACT / Transformer |
 | [Project2](https://github.com/OliviaWYQ/Project2) | RRT/RRT-Connect 路径规划算法实现 | MuJoCo, 数值 IK, RRT |
 | [Project3](https://github.com/OliviaWYQ/Project3) | PoseCNN 6D 姿态估计与抓取 | MuJoCo, PoseCNN, RRT |
@@ -16,16 +15,6 @@
 | [Project7](https://github.com/OliviaWYQ/Project7) | GR00T N1 VLA 模型微调与 LIBERO 仿真验证 | GR00T N1, LIBERO, Docker, LeRobot |
 
 ## 子项目详情
-
-### [grasping-agent](https://github.com/OliviaWYQ/grasping-agent) · 反思型抓取智能体
-
-反思型机械臂抓取智能体。基于 MuJoCo 物理仿真，集成 YOLOv8n 目标检测、RRT-Connect 双向路径规划、数值 IK（阻尼最小二乘法）与 DeepSeek API 反思策略。使用 Piper 6-DOF 机械臂 + Robotiq 双指夹爪。
-
-- **当前阶段**：规则策略 + MuJoCo 真值验证，验证机械臂控制与仿真物理稳定性
-- **下一步**：集成 YOLOv8 视觉检测 → 集成 DeepSeek 反思策略
-- **环境**：`conda activate project1_act`
-
----
 
 ### [Project1](https://github.com/OliviaWYQ/Project1) · ACT 模仿学习
 
@@ -137,7 +126,6 @@
 
 | 本地路径 | 仓库地址 |
 |----------|----------|
-| `grasping-agent/` | [github.com/OliviaWYQ/grasping-agent](https://github.com/OliviaWYQ/grasping-agent) |
 | `Project1/` | [github.com/OliviaWYQ/Project1](https://github.com/OliviaWYQ/Project1) |
 | `Project2/` | [github.com/OliviaWYQ/Project2](https://github.com/OliviaWYQ/Project2) |
 | `Project3/` | [github.com/OliviaWYQ/Project3](https://github.com/OliviaWYQ/Project3) |
